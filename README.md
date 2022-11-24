@@ -10,7 +10,7 @@ RAM:   [=         ]  12.3% (used 40340 bytes from 327680 bytes)
 Flash: [========  ]  80.2% (used 1231825 bytes from 1536000 bytes)
 
 It combines 
-- a configurable WIFI to WIFI NAT router with configuration server ()
+- a configurable WIFI to WIFI NAT router with configuration server (192.168.4.1)
 - with a simple MQTTS broker on port 8883
 - and a sketch for a local MQTTS client (must connect to 127.0.0.1) and application (e.g. relay control)
 
