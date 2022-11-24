@@ -1,0 +1,7 @@
+source "C:/Users/jerry/esp/esp-idf/components/app_update/Kconfig.projbuild"
+source "C:/Users/jerry/esp/esp-idf/components/bootloader/Kconfig.projbuild"
+source "C:/Users/jerry/esp/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "C:/Users/jerry/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "C:/Users/jerry/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+source "C:/Users/jerry/Documents/Platformio/esp32_nat_router2/main/Kconfig.projbuild"
+source "C:/Users/jerry/Documents/Platformio/esp32_nat_router2/components/arduino/Kconfig.projbuild"
