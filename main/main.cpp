@@ -80,8 +80,8 @@ String MQTTserver; // gets the alternatives
   #define mqttPort 1883
 #endif
 
-const char *mqttUser = "tuw";
-const char *mqttPassword = "project2017";
+const char *mqttUser = "";
+const char *mqttPassword = "";
 PubSubClient MQTTclient(WifiClient);
 
 bool hadMQTT = false; // for MQTT re-connection tries
