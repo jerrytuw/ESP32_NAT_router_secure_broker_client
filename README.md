@@ -5,6 +5,8 @@ and https://github.com/tasmota/platform-espressif32 as platform,
 NAT router, TinyMqtt and App in main folder, all with some fixes 
 - this allows to combine IDF and Arduino code in (currently) compatible versions with small changes e.g. on crypto includes.
 Partition table has been set to 1.5M for app.
+RAM:   [=         ]  12.3% (used 40340 bytes from 327680 bytes)
+Flash: [========  ]  80.2% (used 1231825 bytes from 1536000 bytes)
 
 It combines 
 - a configurable WIFI to WIFI NAT router with configuration server ()
