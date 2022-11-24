@@ -9,6 +9,8 @@ Partition table has been set to 1.5M for app.
 RAM:   [=         ]  12.3% (used 40340 bytes from 327680 bytes)
 Flash: [========  ]  80.2% (used 1231825 bytes from 1536000 bytes)
 
+# Provided as is
+
 It combines 
 - a configurable WIFI to WIFI NAT router with configuration server (192.168.4.1)
 - with a simple MQTTS broker on port 8883
@@ -129,6 +131,6 @@ After restart, no webserver is started any more. You can only re-enable it with:
 nvs_namespace esp32_nat
 nvs_set lock str -v 0
 ```
-If you made a mistake and have lost all contact with the ESP you can still use the serial console to reconfigure it. All parameter settings are stored in NVS (non volatile storage), which is *not* erased by simple re-flashing the binaries. If you want to wipe it out, use "esptool.py -p /dev/ttyUSB0 erase_flash".
+All parameter settings are stored in NVS (non volatile storage), which is *not* erased by simple re-flashing the binaries. If you want to wipe it out, use "esptool.py -p /dev/ttyUSB0 erase_flash".
 
 ...
