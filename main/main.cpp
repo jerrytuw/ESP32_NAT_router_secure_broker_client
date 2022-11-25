@@ -9,6 +9,8 @@ extern bool ap_connect;
 #include "cert.h"
 #include "private_key.h"
 #include <PubSubClient.h>
+#include "nvs.h"
+#include "nvs_flash.h"
 
 // We will use wifi
 #include <WiFi.h>
@@ -38,6 +40,8 @@ MqttBroker broker(&cert, PORT);
    max down move time = 10s
    up move to sit down in 3-8s
 */
+
+#define RESET_GPIO GPIO_NUM_23
 
 #define MYAPP "r2d2"
 #define VERSIONDATE "v220512"
@@ -82,6 +86,7 @@ String MQTTserver; // gets the alternatives
 
 const char *mqttUser = "";
 const char *mqttPassword = "";
+
 PubSubClient MQTTclient(WifiClient);
 
 bool hadMQTT = false; // for MQTT re-connection tries
@@ -444,7 +449,6 @@ void loopclient() {
 }
 //*****************************************************************************************//
 
-
 extern "C" void app_main()
 {
      //initArduino();
@@ -452,6 +456,16 @@ extern "C" void app_main()
 
      //Serial.begin(115200);
      //Serial.printf("\n##################hello\n");
+
+  gpio_set_direction(RESET_GPIO, GPIO_MODE_INPUT);
+  gpio_set_pull_mode(RESET_GPIO, GPIO_PULLUP_ONLY);
+
+  int reset_pressed = gpio_get_level(RESET_GPIO);
+  if(reset_pressed==0) 
+  {
+    printf("*** reset pressed - erasing configuration\n");
+    ESP_ERROR_CHECK( nvs_flash_erase() ); // if reset then erase settings
+  }
 
   mainstart();
   ESP_LOGI("first", "###### arduino broker");
