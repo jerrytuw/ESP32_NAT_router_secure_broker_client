@@ -6,13 +6,16 @@ NAT router, TinyMqtt and App in main folder, all with some fixes
 - this allows to combine IDF and Arduino code in (currently) compatible versions with small changes e.g. on crypto includes.
 Partition table has been set to 1.5M for app.
 
+Typical size:
+
 RAM:   [=         ]  12.3% (used 40340 bytes from 327680 bytes)
 Flash: [========  ]  80.2% (used 1231825 bytes from 1536000 bytes)
 
 # Provided as is
 
 It combines 
-- a configurable WIFI to WIFI NAT router with configuration server (192.168.4.1)
+- a configurable WIFI to WIFI NAT router 
+- with configuration server (192.168.4.1), GPIO23 low at start erases configuration
 - with a simple MQTTS broker on port 8883
 - and a sketch for a local MQTTS client (must connect to 127.0.0.1) and application (e.g. relay control)
 

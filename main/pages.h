@@ -3,10 +3,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>\
 <style>\
 body {\
-font-family: 'Helvetica Neue', sans-serif;\
+font-family: sans-serif;\
 padding: 1em;\
 line-height: 2em;\
 font-weight: 100;\
+background-color: #e0e0e0;\
 }\
 \
 td {\
@@ -36,7 +37,7 @@ border: 1px solid rgb(196, 196, 196);\
 color: rgb(76, 76, 76);\
 width: 240px;\
 border-radius: 3px;\
-height: 40px;\
+height: 2em;\
 margin: 3px 0px;\
 padding: 0px 14px;\
 }\
@@ -65,6 +66,7 @@ color: #fff;\
 <body>\
 <div id='config'>\
 <h1>ESP32 NAT Router/Secure Broker Config</h1>\
+<small><i>(you can erase it with GPIO23 low during boot)</i></small>\
 <script>\
 if (window.location.search.substr(1) != '')\
 {\
@@ -73,7 +75,7 @@ document.body.innerHTML ='<h1>ESP32 NAT Router/Secure Broker Config</h1>The new 
 setTimeout(\"location.href = '/'\",10000);\
 }\
 </script>\
-<h2>AP Settings (the to be established WIFI)</h2>\
+<h2>AP Settings (to be established WIFI)</h2>\
 <form action='' method='GET'>\
 <table>\
 <tr>\
@@ -90,30 +92,33 @@ setTimeout(\"location.href = '/'\",10000);\
 </tr>\
 </table>\
 <small>\
-<i>Password </i>less than 8 chars = open<br />\
+<i><strong>Password</strong> less than 8 chars = open</i><br />\
 </small>\
 </form>\
 \
-<h2>STA Settings (the uplink WiFi network) - Connected: %s</h2>\
+<h2>STA Settings (uplink WiFi network)</h2>\
 <form action='' method='GET'>\
 <table>\
 <tr>\
+<td><small>Connected: %s</small></td>\
+</tr>\
+<tr>\
 <td>SSID</td>\
-<td><input type='text' name='ssid' value='%s' placeholder='SSID of existing (to be connected uplink) WIFI'/></td>\
+<td><input type='text' name='ssid' value='%s' placeholder='SSID of existing (uplink) WIFI'/></td>\
 </tr>\
 <tr>\
 <td>Password</td>\
-<td><input type='text' name='password' value='%s' placeholder='Password of existing (to be connected uplink) WIFI'/></td>\
+<td><input type='text' name='password' value='%s' placeholder='Password of existing (uplink) WIFI'/></td>\
 </tr>\
 <tr>\
-<td colspan='2'>WPA2 Enterprise settings. (Leave blank for regular)</td>\
+<td colspan='2'><small><i>Enterprise settings below. (Leave blank for regular)</i></small></td>\
 </tr>\
 <tr>\
-<td>Enterprise username</td>\
+<td>Username</td>\
 <td><input type='text' name='ent_username' value='%s' placeholder='WPA2 Enterprise username'/></td>\
 </tr>\
 <tr>\
-<td>Enterprise identity</td>\
+<td>Identity</td>\
 <td><input type='text' name='ent_identity' value='%s' placeholder='WPA2 Enterprise identity'/></td>\
 </tr>\
 <tr>\

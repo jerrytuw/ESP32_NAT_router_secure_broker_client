@@ -4,6 +4,7 @@
         "board/esp32-wrover-kit-3.3v.cfg"
     ],
     "files.associations": {
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "typeinfo": "c"
     }
 }
