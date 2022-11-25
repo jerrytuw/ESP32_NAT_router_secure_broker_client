@@ -21,6 +21,8 @@ It combines
 
 A lot of fiddling on details made it compileable in Platformio as espidf/Arduino merge.
 
+Tested: NAT router, MQTTS broker for few clients, local MQTTS client for local app, configuration and erasing by GPIO23
+
 based on 
 1) TinyMqtt broker library from https://github.com/hsaturn/TinyMqtt
 modified to make use of SSL connections by ESP32 HTTPS Server
